@@ -1,6 +1,12 @@
 package net.trivo.mod;
 
+import com.sun.jna.internal.ReflectionUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -9,6 +15,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import org.apache.logging.log4j.core.util.ReflectionUtil;
+
+import java.lang.reflect.Field;
+import java.util.function.Supplier;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = TrivoMod.MODID, dist = Dist.CLIENT)
@@ -23,6 +33,6 @@ public class TrivoModClient {
     }
 
     @SubscribeEvent
-    static void onClientSetup(FMLClientSetupEvent event) {
-       }
+    public static void onClientSetup(FMLClientSetupEvent event) {
+    }
 }
